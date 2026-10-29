@@ -1,0 +1,9 @@
+digraph G {
+graph [bgcolor="#FFFFFF", pad="0.2", nodesep="0.45", ranksep="0.55"]; node [shape=box, style="rounded,filled", fillcolor="#F8FAFC", color="#334155", fontname="Arial", fontsize=11, margin="0.12,0.08"]; edge [color="#64748B", arrowsize=0.7, fontname="Arial", fontsize=9];
+rankdir=TB;
+app [label="Application Composition\nRoutes · Providers · Shell · Global Runtime"];
+features [label="Feature / Domain Modules\nBusiness workflows · Domain UI · Queries/Mutations"];
+shared [label="Shared Frontend Platform\nUI primitives · HTTP · validation · i18n · utilities"];
+external [label="External Systems\nBackend · payment · media/content", fillcolor="#EEF2FF"];
+app -> features -> shared -> external;
+}

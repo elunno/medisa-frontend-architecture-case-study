@@ -1,0 +1,19 @@
+digraph G {
+graph [bgcolor="#FFFFFF", pad="0.2", nodesep="0.45", ranksep="0.55"]; node [shape=box, style="rounded,filled", fillcolor="#F8FAFC", color="#334155", fontname="Arial", fontsize=11, margin="0.12,0.08"]; edge [color="#64748B", arrowsize=0.7, fontname="Arial", fontsize=9];
+rankdir=LR;
+browse [label="Browsing"];
+selected [label="Slot Selected"];
+validating [label="Validate Availability"];
+payment [label="Payment Pending"];
+booked [label="Booked", fillcolor="#ECFDF5"];
+stale [label="Stale Slot\nRefresh & Reselect", fillcolor="#FFF7ED"];
+failed [label="Payment Failed\nRetry / Cancel", fillcolor="#FEF2F2"];
+browse -> selected [label="choose"];
+selected -> validating [label="continue"];
+validating -> payment [label="still available"];
+validating -> stale [label="conflict"];
+payment -> booked [label="verified"];
+payment -> failed [label="failed"];
+failed -> payment [label="retry"];
+stale -> browse [label="refresh"];
+}

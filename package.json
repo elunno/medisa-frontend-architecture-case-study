@@ -1,0 +1,17 @@
+{
+  "name": "frontend-architecture-case-study",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An anonymized frontend architecture case study with executable reference models.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test reference-model/test/*.test.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "check:structure": "node scripts/check-structure.mjs",
+    "check": "npm test && npm run check:links && npm run check:structure",
+    "diagrams:render": "bash scripts/render-diagrams.sh"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

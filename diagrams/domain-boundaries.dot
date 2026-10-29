@@ -1,0 +1,12 @@
+digraph G {
+graph [bgcolor="#FFFFFF", pad="0.2", nodesep="0.45", ranksep="0.55"]; node [shape=box, style="rounded,filled", fillcolor="#F8FAFC", color="#334155", fontname="Arial", fontsize=11, margin="0.12,0.08"]; edge [color="#64748B", arrowsize=0.7, fontname="Arial", fontsize=9];
+rankdir=TB;
+shell [label="Application Shell", fillcolor="#E2E8F0"];
+identity [label="Identity & Access\nAuthentication\nProfile\nSubscription\nEntitlements"];
+content [label="Content\nLibrary / Explore\nReader\nAudio\nProgress\nBookmarks"];
+services [label="Professional Services\nSearch\nProfiles\nAvailability\nBooking\nPayment"];
+wellness [label="Wellness\nMood Flow\nRecommendations\nMeditation\nAssessments"];
+shared [label="Shared Platform\nAPI / Query · State · Design primitives\ni18n · errors · connectivity / PWA"];
+shell -> identity; shell -> content; shell -> services; shell -> wellness;
+identity -> shared; content -> shared; services -> shared; wellness -> shared;
+}
